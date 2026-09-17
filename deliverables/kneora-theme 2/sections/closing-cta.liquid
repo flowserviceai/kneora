@@ -1,0 +1,25 @@
+{% assign destination = settings.main_product.url | default: routes.all_products_collection_url %}<section class="closing"><div class="wrap"><h2>{{ section.settings.heading | escape }}</h2><p>{{ section.settings.text | escape }}</p>{% if template.name == 'product' %}<p><span data-final-title>{{ product.selected_or_first_available_variant.title | escape }}</span> <strong data-final-price>{{ product.selected_or_first_available_variant.price | money }}</strong></p><a class="button light" href="#Purchase" data-return-purchase>{{ 'product.choose_again' | t }}</a>{% else %}<a class="button light" href="{{ destination }}">{{ 'general.shop' | t }} {{ settings.brand | escape }}</a>{% endif %}</div></section>
+{% schema %}
+{
+  "name": "Closing invitation",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your next shift can wait a moment."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Make some room for yourself when the workday is done."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Closing invitation"
+    }
+  ]
+}
+{% endschema %}

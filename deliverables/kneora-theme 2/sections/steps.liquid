@@ -1,0 +1,49 @@
+{% if section.blocks.size > 0 %}<section class="wrap section-space"><div class="section-heading"><h2>{{ section.settings.heading | escape }}</h2><p>{{ section.settings.intro | escape }}</p></div><ol class="steps">{% for block in section.blocks %}<li {{ block.shopify_attributes }}>{% if block.settings.image %}{{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}{% endif %}<span class="step-number">{{ forloop.index }}</span><h3>{{ block.settings.title | escape }}</h3><div class="rte">{{ block.settings.text }}</div></li>{% endfor %}</ol></section>{% elsif request.design_mode %}<div class="wrap editor-placeholder">Add manufacturer-confirmed usage steps in this section.</div>{% endif %}
+{% schema %}
+{
+  "name": "Product guide",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A routine that fits your evening."
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "Follow the instructions supplied with your device."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Instruction image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Get comfortable"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Manufacturer-confirmed instructions"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product guide"
+    }
+  ]
+}
+{% endschema %}

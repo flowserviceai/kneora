@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "intro": {
+      "type": "editorial",
+      "settings": {
+        "heading": "Good work deserves time off.",
+        "text": "<p>Kneora is a considered approach to at-home knee care for people who work with their hands. Practical equipment. Straightforward information. Space for the hours that belong to you.</p>"
+      }
+    },
+    "closing": {
+      "type": "closing-cta"
+    }
+  },
+  "order": [
+    "intro",
+    "closing"
+  ]
+}

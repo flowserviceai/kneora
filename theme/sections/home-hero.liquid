@@ -1,0 +1,42 @@
+{% assign destination = settings.main_product.url | default: routes.all_products_collection_url %}<section class="home-hero"><div class="wrap hero-grid"><div class="hero-copy"><h1>{{ section.settings.heading | escape }}</h1><p>{{ section.settings.text | escape }}</p><a class="button" href="{{ destination }}">{{ 'general.shop' | t }} {{ settings.brand | escape }}</a><p class="hero-note">{{ section.settings.note | escape }}</p></div><div class="hero-art">{% if section.settings.image %}{{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '600,1000,1600' }}{% elsif settings.main_product.featured_image %}{{ settings.main_product.featured_image | image_url: width: 1600 | image_tag: loading: 'eager', widths: '600,1000,1600' }}{% else %}<div class="brand-composition"><span>{{ settings.brand | escape }}</span><p>{{ section.settings.art_text | escape }}</p><div class="brand-rule"></div><small>360 × 242 × 160 mm</small></div>{% endif %}</div></div></section>
+{% schema %}
+{
+  "name": "Brand introduction",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Headline",
+      "default": "For the hours you call your own."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Introduction",
+      "default": "Long days ask a lot of your knees. Make space for a straightforward at-home routine with Kneora."
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Supporting detail",
+      "default": "One device. Two knee openings."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Approved hero photograph"
+    },
+    {
+      "type": "text",
+      "id": "art_text",
+      "label": "Brand panel text",
+      "default": "A considered approach to knee care."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand introduction"
+    }
+  ]
+}
+{% endschema %}

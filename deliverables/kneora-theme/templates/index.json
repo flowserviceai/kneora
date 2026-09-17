@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "hero": {
+      "type": "home-hero"
+    },
+    "featured": {
+      "type": "featured-products"
+    },
+    "construction": {
+      "type": "editorial",
+      "blocks": {
+        "d1": {
+          "type": "detail",
+          "settings": {
+            "title": "Two separate openings",
+            "text": "<p>One continuous housing, with a channel for each knee.</p>"
+          }
+        },
+        "d2": {
+          "type": "detail",
+          "settings": {
+            "title": "360 \u00d7 242 \u00d7 160 mm",
+            "text": "<p>Overall device dimensions.</p>"
+          }
+        },
+        "d3": {
+          "type": "detail",
+          "settings": {
+            "title": "A clear central control panel",
+            "text": "<p>A blue-lit display on the top of the housing.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "d1",
+        "d2",
+        "d3"
+      ]
+    },
+    "audience": {
+      "type": "editorial",
+      "settings": {
+        "dark": true,
+        "heading": "Care belongs in your toolkit.",
+        "text": "<p>For people who build, fit, fix and finish. Kneora makes space for a considered at-home routine after a demanding day.</p>"
+      }
+    },
+    "stories": {
+      "type": "testimonials"
+    },
+    "closing": {
+      "type": "closing-cta"
+    }
+  },
+  "order": [
+    "hero",
+    "featured",
+    "construction",
+    "audience",
+    "stories",
+    "closing"
+  ]
+}

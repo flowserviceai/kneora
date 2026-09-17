@@ -1,0 +1,352 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "b0": {
+          "type": "benefit",
+          "settings": {
+            "text": "One device accommodates both knees together"
+          }
+        },
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "text": "Heating adds warmth to your knee-care routine"
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "text": "Vibration and air compression massage functions"
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "text": "Red and blue light in the same device"
+          }
+        },
+        "f0": {
+          "type": "faq",
+          "settings": {
+            "question": "Is this one device for both knees?",
+            "answer": "<p>Yes. Kneora has two separate knee openings within one housing, divided at the center.</p>"
+          }
+        },
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "What functions does it include?",
+            "answer": "<p>Heating, vibration, air compression, and red and blue light functions.</p>"
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between the packages?",
+            "answer": "<p>Both packages contain the same dual-knee device. The second package also includes after-care gel.</p>"
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "How large is it?",
+            "answer": "<p>The overall dimensions are 360 \u00d7 242 \u00d7 160 mm. These are external measurements, not the internal knee fitting range.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "settings": {
+        "headline": "You put in the work. Make time for your knees.",
+        "subhead": "Heat, vibration, air compression, and red and blue light in one dual-knee device. Make Kneora part of your routine when the boots come off.",
+        "single_contents": "One device for both knees",
+        "bundle_contents": "One dual-knee device plus after-care gel"
+      }
+    },
+    "stories": {
+      "type": "testimonials"
+    },
+    "authority": {
+      "type": "editorial",
+      "settings": {
+        "enabled": false,
+        "heading": "A closer look at the evidence.",
+        "text": "<p>Add a verified expert explanation and its source before enabling this section.</p>"
+      }
+    },
+    "construction": {
+      "type": "editorial",
+      "settings": {
+        "enabled": true,
+        "heading": "Both knees. One place to unwind.",
+        "text": "<p>Long shifts. Floor-level work. Hours spent kneeling. Kneora brings dedicated knee care into your time at home.</p>"
+      },
+      "blocks": {
+        "d0": {
+          "type": "detail",
+          "settings": {
+            "title": "Two separate knee channels",
+            "text": "<p>A single continuous housing accommodates both knees together, with a divider at the center.</p>"
+          }
+        },
+        "d1": {
+          "type": "detail",
+          "settings": {
+            "title": "A rigid ABS shell",
+            "text": "<p>White housing with dark padding and trim.</p>"
+          }
+        },
+        "d2": {
+          "type": "detail",
+          "settings": {
+            "title": "Controls within view",
+            "text": "<p>The control panel sits at the top center, with a blue-lit display.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "d0",
+        "d1",
+        "d2"
+      ]
+    },
+    "guide": {
+      "type": "steps"
+    },
+    "audience": {
+      "type": "editorial",
+      "settings": {
+        "dark": true,
+        "heading": "Built into your evening.",
+        "text": "<p>On the tools. On your feet. Down at floor level. Skilled work asks a lot of you. Your time at home deserves consideration, too.</p>"
+      }
+    },
+    "comparison": {
+      "type": "comparison",
+      "settings": {
+        "enabled": true,
+        "heading": "Two packages. The same dual-knee device.",
+        "column_feature": "Included",
+        "column_single": "Single massager",
+        "column_bundle": "Massager + after-care gel"
+      },
+      "blocks": {
+        "r0": {
+          "type": "row",
+          "settings": {
+            "feature": "Dual-knee device",
+            "single": "One",
+            "bundle": "One"
+          }
+        },
+        "r1": {
+          "type": "row",
+          "settings": {
+            "feature": "Heating",
+            "single": "Included",
+            "bundle": "Included"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "feature": "Vibration massage",
+            "single": "Included",
+            "bundle": "Included"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "feature": "Air compression",
+            "single": "Included",
+            "bundle": "Included"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "feature": "Red and blue light",
+            "single": "Included",
+            "bundle": "Included"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "feature": "After-care gel",
+            "single": "Not included",
+            "bundle": "Included"
+          }
+        }
+      },
+      "block_order": [
+        "r0",
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ]
+    },
+    "technology": {
+      "type": "editorial",
+      "settings": {
+        "enabled": true,
+        "heading": "More ways to wind down. One device.",
+        "text": "<p>When the boots come off, make some room for yourself. Kneora brings several functions into one device for both knees.</p>"
+      },
+      "blocks": {
+        "d0": {
+          "type": "detail",
+          "settings": {
+            "title": "Warmth",
+            "text": "<p>A built-in heating function adds warmth to your knee-care routine.</p>"
+          }
+        },
+        "d1": {
+          "type": "detail",
+          "settings": {
+            "title": "Vibration",
+            "text": "<p>Vibration massage is built into the dual-knee housing.</p>"
+          }
+        },
+        "d2": {
+          "type": "detail",
+          "settings": {
+            "title": "Air compression",
+            "text": "<p>An air-compression function adds another massage option.</p>"
+          }
+        },
+        "d3": {
+          "type": "detail",
+          "settings": {
+            "title": "Red and blue light",
+            "text": "<p>Both light functions are included in the device\u2019s feature set.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "d0",
+        "d1",
+        "d2",
+        "d3"
+      ]
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q0": {
+          "type": "question",
+          "settings": {
+            "question": "Is Kneora a soft knee wrap?",
+            "answer": "<p>No. It is a rigid device with an ABS outer shell and padded knee channels.</p>"
+          }
+        },
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Where can I find operating instructions?",
+            "answer": "<p>Follow the instructions supplied with your device for positioning, settings, use and care.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Does the gel package use a different device?",
+            "answer": "<p>No. Both package options contain the same dual-knee device. The gel is the additional item.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Do the overall dimensions tell me whether it will fit?",
+            "answer": "<p>No. Overall dimensions describe the outside of the device. Contact the store for internal fitting measurements before ordering if you are unsure.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q0",
+        "q1",
+        "q2",
+        "q3"
+      ]
+    },
+    "closing": {
+      "type": "closing-cta"
+    },
+    "specifications": {
+      "type": "comparison",
+      "settings": {
+        "enabled": true,
+        "heading": "The details, measured.",
+        "column_feature": "Specification",
+        "column_single": "Detail",
+        "column_bundle": "What to know"
+      },
+      "blocks": {
+        "r0": {
+          "type": "row",
+          "settings": {
+            "feature": "Device format",
+            "single": "One rigid dual-knee unit",
+            "bundle": "Two separate channels with a central divider"
+          }
+        },
+        "r1": {
+          "type": "row",
+          "settings": {
+            "feature": "Overall size",
+            "single": "360 \u00d7 242 \u00d7 160 mm",
+            "bundle": "External dimensions; not the internal fitting range"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "feature": "Housing",
+            "single": "ABS",
+            "bundle": "White shell with dark padding and trim"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "feature": "Control panel",
+            "single": "Top-mounted, blue-lit display",
+            "bundle": "Positioned at the center of the housing"
+          }
+        }
+      },
+      "block_order": [
+        "r0",
+        "r1",
+        "r2",
+        "r3"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "stories",
+    "authority",
+    "construction",
+    "technology",
+    "specifications",
+    "guide",
+    "audience",
+    "comparison",
+    "faq",
+    "closing"
+  ]
+}

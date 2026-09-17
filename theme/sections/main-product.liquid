@@ -1,0 +1,104 @@
+{% liquid
+assign item = product
+if item == blank
+  assign item = settings.main_product
+endif
+assign current = item.selected_or_first_available_variant
+assign form_id = 'ProductForm-' | append: section.id
+%}
+{% if item != blank %}
+<kneora-product class="wrap product-layout {% if item.media.size == 0 and request.design_mode == false %}no-product-media{% endif %}" id="Purchase" data-add="{{ 'product.add' | t }}" data-sold="{{ 'product.sold' | t }}" data-adding="{{ 'product.adding' | t }}" data-error="{{ 'product.error' | t }}" data-added="{{ 'product.added' | t }}">
+{% render 'gallery', item: item, uid: section.id %}
+<div class="purchase-panel"><p class="product-name">{{ item.title | escape }}</p><h1>{{ section.settings.headline | escape }}</h1><p class="lede">{{ section.settings.subhead | escape }}</p>
+<ul class="benefits">{% for block in section.blocks %}{% if block.type == 'benefit' %}<li {{ block.shopify_attributes }}><span aria-hidden="true">✓</span>{{ block.settings.text | escape }}</li>{% endif %}{% endfor %}</ul>
+{% form 'product', item, id: form_id, class: 'product-form' %}
+<fieldset class="offers"><legend>{{ 'product.choose' | t }}</legend>
+{% for variant in item.variants %}<label class="offer {% if variant.id == current.id %}selected{% endif %}"><input type="radio" name="id" value="{{ variant.id }}" {% if variant.id == current.id %}checked{% endif %} data-title="{{ variant.title | escape }}" data-price="{{ variant.price | money | escape }}" data-available="{{ variant.available }}" data-media="{{ variant.featured_media.id }}"><span class="offer-body"><span class="offer-title">{% if item.has_only_default_variant %}{{ item.title | escape }}{% else %}{{ variant.title | escape }}{% endif %}</span><span class="offer-price">{{ variant.price | money }}{% if variant.compare_at_price > variant.price %} <s>{{ variant.compare_at_price | money }}</s>{% endif %}</span>{% if forloop.index == 1 and section.settings.single_contents != blank %}<small>{{ section.settings.single_contents | escape }}</small>{% elsif forloop.index == 2 and section.settings.bundle_contents != blank %}<small>{{ section.settings.bundle_contents | escape }}</small>{% endif %}{% unless variant.available %}<small>{{ 'product.sold' | t }}</small>{% endunless %}</span></label>{% endfor %}
+</fieldset>
+<div class="purchase-meta"><span>{{ 'product.once' | t }}</span><strong data-selected-price>{{ current.price | money }}</strong></div>
+<div class="buy-row"><label class="quantity-label" for="Qty-{{ section.id }}">{{ 'general.quantity' | t }}<input id="Qty-{{ section.id }}" type="number" name="quantity" value="1" min="1" step="1" inputmode="numeric"></label><button type="submit" name="add" class="button" data-add-button {% unless current.available %}disabled{% endunless %}>{% if current.available %}{{ 'product.add' | t }}{% else %}{{ 'product.sold' | t }}{% endif %}</button></div>
+<p class="form-status" data-product-status role="status" aria-live="polite"></p>
+{% endform %}
+<div class="reassurance">{% if section.settings.reassurance != blank %}<p>{{ section.settings.reassurance | escape }}</p>{% endif %}{% if shop.shipping_policy.body != blank %}<a href="{{ shop.shipping_policy.url }}">{{ 'product.shipping' | t }}</a>{% endif %}{% if shop.refund_policy.body != blank %}<a href="{{ shop.refund_policy.url }}">{{ 'product.returns' | t }}</a>{% endif %}</div>
+<div class="purchase-faq">{% for block in section.blocks %}{% if block.type == 'faq' %}<details {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}</summary><div class="rte">{{ block.settings.answer }}</div></details>{% endif %}{% endfor %}</div>
+{% if item.description != blank %}<details><summary>{{ 'product.details' | t }}</summary><div class="rte">{{ item.description }}</div></details>{% endif %}
+{% for block in section.blocks %}{% if block.type == '@app' %}{% render block %}{% endif %}{% endfor %}
+</div>
+<div class="sticky-buy" hidden><div><span data-selected-title>{{ current.title | escape }}</span><strong data-sticky-price>{{ current.price | money }}</strong></div><button type="submit" form="{{ form_id }}" class="button" data-add-button {% unless current.available %}disabled{% endunless %}>{{ 'product.add' | t }}</button></div>
+</kneora-product><script type="application/ld+json">{{ item | structured_data }}</script>
+{% elsif request.design_mode %}<div class="wrap section-space editor-placeholder">{{ 'product.missing' | t }}</div>{% endif %}
+{% schema %}
+{
+  "name": "Kneora product",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "The workday ends. Make room for knee care."
+    },
+    {
+      "type": "textarea",
+      "id": "subhead",
+      "label": "Introduction",
+      "default": "A dual-knee massager with heat, massage, and red and blue light for your at-home routine."
+    },
+    {
+      "type": "text",
+      "id": "single_contents",
+      "label": "First option contents"
+    },
+    {
+      "type": "text",
+      "id": "bundle_contents",
+      "label": "Second option contents"
+    },
+    {
+      "type": "text",
+      "id": "reassurance",
+      "label": "Confirmed shipping / guarantee details"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "One device for both knees"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "Purchase question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Does it fit both knees?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>One unit has two separate knee openings for both knees together.</p>"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kneora product"
+    }
+  ]
+}
+{% endschema %}

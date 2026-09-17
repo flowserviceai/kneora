@@ -1,0 +1,48 @@
+## Validation Summary
+
+**Overall Status:** ✅ VALID
+**Total Files:** 5
+
+## Detailed Results
+
+### File 1
+**Artifact ID:** kneora-theme
+**Revision:** 6
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** sections/header.liquid passed all checks.
+
+### File 2
+**Artifact ID:** kneora-theme
+**Revision:** 6
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/kneora.css passed all checks.
+
+### File 3
+**Artifact ID:** kneora-theme
+**Revision:** 6
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** sections/comparison.liquid passed all checks.
+
+### File 4
+**Artifact ID:** kneora-theme
+**Revision:** 6
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** templates/product.json passed all checks.
+
+### File 5
+**Artifact ID:** kneora-theme
+**Revision:** 6
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** templates/index.json passed all checks.
+
+

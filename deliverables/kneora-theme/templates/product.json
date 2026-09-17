@@ -1,0 +1,156 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "b0": {
+          "type": "benefit",
+          "settings": {
+            "text": "An at-home routine after the workday"
+          }
+        },
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "text": "One device for both knees together"
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "text": "Heat and massage functions"
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "text": "Red and blue light functions"
+          }
+        },
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is this one device for both knees?",
+            "answer": "<p>Yes. The housing has two separate knee openings with a central divider.</p>"
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "How large is the device?",
+            "answer": "<p>The overall dimensions are 360 \u00d7 242 \u00d7 160 mm. Overall dimensions do not specify the internal fitting range.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "f1",
+        "f2"
+      ]
+    },
+    "stories": {
+      "type": "testimonials"
+    },
+    "authority": {
+      "type": "editorial",
+      "settings": {
+        "enabled": false,
+        "heading": "A closer look at the evidence.",
+        "text": "<p>Add a verified expert explanation and its source before enabling this section.</p>"
+      }
+    },
+    "construction": {
+      "type": "editorial",
+      "blocks": {
+        "d1": {
+          "type": "detail",
+          "settings": {
+            "title": "Two separate openings",
+            "text": "<p>One continuous housing, with a channel for each knee.</p>"
+          }
+        },
+        "d2": {
+          "type": "detail",
+          "settings": {
+            "title": "360 \u00d7 242 \u00d7 160 mm",
+            "text": "<p>Overall device dimensions.</p>"
+          }
+        },
+        "d3": {
+          "type": "detail",
+          "settings": {
+            "title": "A clear central control panel",
+            "text": "<p>A blue-lit display on the top of the housing.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "d1",
+        "d2",
+        "d3"
+      ]
+    },
+    "guide": {
+      "type": "steps"
+    },
+    "audience": {
+      "type": "editorial",
+      "settings": {
+        "dark": true,
+        "heading": "Built into your evening.",
+        "text": "<p>On the tools. On your feet. Down at floor level. Skilled work asks a lot of you. Your time at home deserves consideration, too.</p>"
+      }
+    },
+    "comparison": {
+      "type": "comparison"
+    },
+    "technology": {
+      "type": "editorial",
+      "settings": {
+        "enabled": false,
+        "heading": "Get to know the controls."
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Is Kneora a fabric knee wrap?",
+            "answer": "<p>No. Kneora is a rigid dual-knee unit with a white shell and separate knee openings.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Where can I find use and care instructions?",
+            "answer": "<p>Follow the instructions provided with your device. Contact the store if you need help finding your product documentation.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "closing": {
+      "type": "closing-cta"
+    }
+  },
+  "order": [
+    "main",
+    "stories",
+    "authority",
+    "construction",
+    "guide",
+    "audience",
+    "comparison",
+    "technology",
+    "faq",
+    "closing"
+  ]
+}

@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "text",
+        "id": "brand",
+        "label": "Brand name",
+        "default": "Kneora"
+      },
+      {
+        "type": "color",
+        "id": "navy",
+        "label": "Workwear navy",
+        "default": "#20364B"
+      },
+      {
+        "type": "color",
+        "id": "paper",
+        "label": "Chalk white",
+        "default": "#FAFCFD"
+      },
+      {
+        "type": "color",
+        "id": "accent",
+        "label": "Amber",
+        "default": "#D5A442"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading font",
+        "default": "assistant_n7"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body font",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  },
+  {
+    "name": "Store links",
+    "settings": [
+      {
+        "type": "product",
+        "id": "main_product",
+        "label": "Main Kneora product"
+      },
+      {
+        "type": "link_list",
+        "id": "main_menu",
+        "label": "Main menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu",
+        "label": "Footer menu",
+        "default": "footer"
+      },
+      {
+        "type": "url",
+        "id": "guide_url",
+        "label": "Product guide"
+      },
+      {
+        "type": "url",
+        "id": "story_url",
+        "label": "Our story"
+      },
+      {
+        "type": "url",
+        "id": "support_url",
+        "label": "Support page"
+      },
+      {
+        "type": "text",
+        "id": "support_email",
+        "label": "Support email"
+      },
+      {
+        "type": "text",
+        "id": "support_hours",
+        "label": "Support hours"
+      }
+    ]
+  }
+]

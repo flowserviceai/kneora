@@ -1,0 +1,22 @@
+{% if section.settings.announcement != blank %}<div class="announcement">{{ section.settings.announcement | escape }}</div>{% endif %}
+<header class="site-header wrap">
+<a class="wordmark" href="{{ routes.root_url }}">{{ settings.brand | escape }}</a>
+<nav class="desktop-nav" aria-label="{{ 'general.menu' | t }}">
+{% if settings.main_menu.links.size > 0 %}{% for link in settings.main_menu.links %}<a href="{{ link.url }}" {% if link.current %}aria-current="page"{% endif %}>{{ link.title | escape }}</a>{% endfor %}{% else %}<a href="{{ routes.all_products_collection_url }}">{{ 'general.shop' | t }}</a>{% endif %}
+</nav>
+<div class="header-actions"><a class="search-link" href="{{ routes.search_url }}">{{ 'general.search' | t }}</a><a href="{{ routes.cart_url }}" data-open-cart>{{ 'general.cart' | t }} <span data-cart-count>{{ cart.item_count }}</span></a><button class="mobile-menu" data-open="MobileMenu" aria-haspopup="dialog">{{ 'general.menu' | t }}</button></div>
+</header>
+<dialog id="MobileMenu" class="drawer menu-drawer" aria-label="{{ 'general.menu' | t }}"><div class="drawer-top"><span class="wordmark">{{ settings.brand | escape }}</span><button data-close aria-label="{{ 'general.close' | t }}">×</button></div><nav>{% for link in settings.main_menu.links %}<a href="{{ link.url }}">{{ link.title | escape }}</a>{% endfor %}<a href="{{ routes.search_url }}">{{ 'general.search' | t }}</a></nav></dialog>
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Announcement",
+      "default": "One device. Both knees. Your after-work routine."
+    }
+  ]
+}
+{% endschema %}

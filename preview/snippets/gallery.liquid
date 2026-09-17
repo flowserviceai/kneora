@@ -1,0 +1,10 @@
+
+<kneora-gallery class="gallery">
+<div class="gallery-stage" aria-label="{{ 'product.media' | t }}">
+{% for media in item.media %}<div class="gallery-slide" data-slide="{{ media.id }}" {% unless forloop.first %}hidden{% endunless %}>
+{% case media.media_type %}{% when 'image' %}<button type="button" class="zoom-trigger" data-zoom aria-label="{{ 'product.zoom' | t }}">{% if forloop.first %}{{ media | image_url: width: 1600 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '400,700,1000,1600' }}{% else %}{{ media | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '400,700,1000,1600' }}{% endif %}<span class="zoom-plus" aria-hidden="true">+</span></button>{% when 'video' %}{{ media | video_tag: controls: true, autoplay: false, preload: 'metadata' }}{% when 'external_video' %}{{ media | external_video_tag }}{% else %}{{ media | media_tag }}{% endcase %}</div>{% endfor %}
+{% if item.media.size == 0 and request.design_mode %}<div class="editor-placeholder">{{ 'product.image_missing' | t }}</div>{% endif %}
+</div>
+{% if item.media.size > 1 %}<div class="gallery-thumbs">{% for media in item.media %}<button type="button" data-show="{{ media.id }}" aria-label="{{ media.alt | default: item.title | escape }} {{ forloop.index }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ media.preview_image | image_url: width: 160 | image_tag: loading: 'lazy' }}</button>{% endfor %}</div>{% endif %}
+<dialog id="Zoom-{{ uid }}" class="zoom-dialog" aria-label="{{ 'product.zoom' | t }}"><button type="button" data-close aria-label="{{ 'general.close' | t }}">×</button><img data-zoom-image alt="" width="1200" height="1200"></dialog>
+</kneora-gallery>

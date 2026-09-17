@@ -1,0 +1,7 @@
+<section class="wrap section-space"><div class="section-heading"><h1>{{ collection.title | escape }}</h1><div class="rte">{{ collection.description }}</div></div>{% paginate collection.products by 12 %}<div class="product-grid">{% for item in collection.products %}{% render 'product-card', item: item %}{% endfor %}</div>{{ paginate | default_pagination }}{% endpaginate %}</section>
+{% schema %}
+{
+  "name": "Collection",
+  "settings": []
+}
+{% endschema %}

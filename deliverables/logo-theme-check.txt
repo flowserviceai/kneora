@@ -1,0 +1,33 @@
+## Validation Summary
+
+**Overall Status:** ❌ INVALID
+**Total Files:** 3
+
+## Detailed Results
+
+### File 1
+**Artifact ID:** kneora-theme
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/kneora-logo.svg passed all checks.
+
+### File 2
+**Artifact ID:** kneora-theme
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/kneora-logo-generated.png passed all checks.
+
+### File 3
+**Artifact ID:** kneora-theme
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ❌ FAILED
+**Details:** sections/header.liquid:
+ERROR [line 3, col 50]: Missing width and height attributes on img tag
+
+

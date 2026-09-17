@@ -1,0 +1,67 @@
+{% if section.settings.enabled %}<section class="wrap section-space"><div class="section-heading"><h2>{{ section.settings.heading | escape }}</h2></div><div class="table-scroll"><table><caption class="visually-hidden">{{ section.settings.heading | escape }}</caption><thead><tr><th scope="col">{{ section.settings.column_feature | escape }}</th><th scope="col">{% if section.settings.column_single != blank %}{{ section.settings.column_single | escape }}{% else %}{{ 'product.single' | t }}{% endif %}</th><th scope="col">{% if section.settings.column_bundle != blank %}{{ section.settings.column_bundle | escape }}{% else %}{{ 'product.bundle_label' | t }}{% endif %}</th></tr></thead><tbody>{% for block in section.blocks %}<tr {{ block.shopify_attributes }}><th scope="row">{{ block.settings.feature | escape }}</th><td>{{ block.settings.single | escape }}</td><td>{{ block.settings.bundle | escape }}</td></tr>{% endfor %}</tbody></table></div></section>{% endif %}
+{% schema %}
+{
+  "name": "Package comparison",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Show comparison",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Choose what belongs in your routine."
+    },
+    {
+      "type": "text",
+      "id": "column_feature",
+      "label": "First column heading",
+      "default": "Included"
+    },
+    {
+      "type": "text",
+      "id": "column_single",
+      "label": "Second column heading"
+    },
+    {
+      "type": "text",
+      "id": "column_bundle",
+      "label": "Third column heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Comparison row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature",
+          "label": "Feature",
+          "default": "Dual-knee massager"
+        },
+        {
+          "type": "text",
+          "id": "single",
+          "label": "Single package",
+          "default": "One"
+        },
+        {
+          "type": "text",
+          "id": "bundle",
+          "label": "Bundle package",
+          "default": "One"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Package comparison"
+    }
+  ]
+}
+{% endschema %}

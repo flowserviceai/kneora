@@ -1,0 +1,50 @@
+{% assign has_stories = false %}{% for block in section.blocks %}{% if block.type == '@app' or block.settings.quote != blank %}{% assign has_stories = true %}{% endif %}{% endfor %}{% if has_stories %}<section class="wrap section-space" id="Reviews"><div class="section-heading"><h2>{{ section.settings.heading | escape }}</h2></div><div class="stories">{% for block in section.blocks %}{% if block.type == '@app' %}<div class="review-app">{% render block %}</div>{% elsif block.settings.quote != blank %}<figure {{ block.shopify_attributes }}>{% if block.settings.image %}{{ block.settings.image | image_url: width: 650 | image_tag: loading: 'lazy' }}{% endif %}<blockquote>{{ block.settings.quote | escape }}</blockquote><figcaption><strong>{{ block.settings.name | escape }}</strong><span>{{ block.settings.context | escape }}</span></figcaption></figure>{% endif %}{% endfor %}</div></section>{% elsif request.design_mode %}<section class="wrap section-space editor-placeholder"><h2>{{ section.settings.heading | escape }}</h2><p>Add genuine customer stories or a review app. This empty section is hidden outside the theme editor.</p></section>{% endif %}
+{% schema %}
+{
+  "name": "Customer stories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "In good company."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "Genuine customer story",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Customer-approved photo"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Real customer quote"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer name"
+        },
+        {
+          "type": "text",
+          "id": "context",
+          "label": "Customer-provided context"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer stories"
+    }
+  ]
+}
+{% endschema %}

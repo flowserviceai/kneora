@@ -1,0 +1,20 @@
+<footer class="site-footer"><div class="wrap footer-grid"><div><a class="wordmark" href="{{ routes.root_url }}">{{ settings.brand | escape }}</a><p class="footer-statement">{{ section.settings.statement | escape }}</p></div><nav aria-label="{{ 'general.support' | t }}">{% for link in settings.footer_menu.links %}<a href="{{ link.url }}">{{ link.title | escape }}</a>{% endfor %}{% for policy in shop.policies %}{% if policy.body != blank %}<a href="{{ policy.url }}">{{ policy.title | escape }}</a>{% endif %}{% endfor %}</nav><div>{% if settings.support_email != blank %}<a href="mailto:{{ settings.support_email | escape }}">{{ settings.support_email | escape }}</a>{% endif %}{% if settings.support_hours != blank %}<p>{{ settings.support_hours | escape }}</p>{% endif %}{% if section.settings.newsletter %}{% form 'customer' %}<input type="hidden" name="contact[tags]" value="newsletter"><label for="FooterEmail">{{ 'newsletter.label' | t }}</label><div class="inline-form"><input id="FooterEmail" type="email" name="contact[email]" autocomplete="email" required><button>{{ 'newsletter.button' | t }}</button></div>{{ form.errors | default_errors }}{% if form.posted_successfully? %}<p role="status">{{ 'newsletter.success' | t }}</p>{% endif %}{% endform %}{% endif %}</div></div><div class="wrap footer-bottom"><span>© {{ 'now' | date: '%Y' }} {{ settings.brand | escape }}</span><div class="payment-icons">{% for type in shop.enabled_payment_types %}{{ type | payment_type_svg_tag }}{% endfor %}</div></div></footer>
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "statement",
+      "label": "Brand statement",
+      "default": "For the hours you call your own."
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter",
+      "label": "Enable email signup",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

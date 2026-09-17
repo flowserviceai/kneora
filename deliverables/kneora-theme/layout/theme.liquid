@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ page_title | escape }}{% unless page_title contains shop.name %} — {{ shop.name | escape }}{% endunless %}</title>
+{% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+<link rel="canonical" href="{{ canonical_url }}">
+{% if settings.favicon %}<link rel="icon" href="{{ settings.favicon | image_url: width: 32 }}">{% endif %}
+{{ content_for_header }}
+{% style %}
+{{ settings.heading_font | font_face: font_display: 'swap' }}
+{{ settings.body_font | font_face: font_display: 'swap' }}
+:root{--navy:{{ settings.navy }};--paper:{{ settings.paper }};--amber:{{ settings.accent }};--heading:{{ settings.heading_font.family }},{{ settings.heading_font.fallback_families }};--body:{{ settings.body_font.family }},{{ settings.body_font.fallback_families }};}
+{% endstyle %}
+{{ 'kneora.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'kneora.js' | asset_url }}" defer></script>
+</head>
+<body data-cart-url="{{ routes.cart_url }}" data-root="{{ routes.root_url }}">
+<a class="skip-link" href="#MainContent">{{ 'general.skip' | t }}</a>
+{% sections 'header-group' %}
+<main id="MainContent">{{ content_for_layout }}</main>
+{% sections 'footer-group' %}
+<dialog id="CartDrawer" class="drawer" aria-labelledby="CartTitle"><div class="drawer-top"><h2 id="CartTitle">{{ 'cart.title' | t }}</h2><button type="button" data-close aria-label="{{ 'general.close' | t }}">×</button></div><div data-cart-content></div></dialog>
+<div hidden id="CartTranslations" data-error="{{ 'cart.error' | t }}"></div>
+</body></html>

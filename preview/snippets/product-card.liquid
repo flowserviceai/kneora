@@ -1,0 +1,2 @@
+
+<article class="product-card"><a href="{{ item.url }}">{% if item.featured_image %}<div class="card-media">{{ item.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360,600,900' }}</div>{% endif %}<div class="card-info"><h3>{{ item.title | escape }}</h3><span>{{ item.price | money }}</span></div>{% unless item.available %}<span>{{ 'product.sold' | t }}</span>{% endunless %}</a></article>
